@@ -7,21 +7,20 @@ def main():
     data = []
     data = getpresidency()
     jaccardmatrix = [[]]
+    hammingmatrix = np.matrix
     i = 0
+    x = 0
     while i < len(data):
-        data[i].pop(0)
+        while x < len(data):
+            if i & x != 0:
+                print("hello")
+                print(hamming_distance(data[x],data[i]))
+            x += 1
         i += 1
+        x = 0
     i = 0
     a = 0
-    while i < len(data):
-      data[i] = [eval(x) for x in data[i]]
-      i += 1
 
-    print(jaccard_binary(data[0],data[1]))
-    print(hamming_distance(data[0],data[1]))
-    matrix = np.multiply(data, data)
-    print(data)
-    print(matrix)
     return
 def getpresidency():
     import csv
@@ -37,7 +36,7 @@ def getpresidency():
     return rows
 
 def jaccard_binary(x,y):
-    """A function for finding the similarity between two binary vectors"""
+    # A function for finding the similarity between two binary values
     intersection = np.logical_and(x, y)
     union = np.logical_or(x, y)
     similarity = intersection.sum() / float(union.sum())
@@ -46,6 +45,7 @@ def jaccard_binary(x,y):
 
 
 def hamming_distance(A,B):
+    # A function for finding hamming distance.
     x = 0
     i= 0
     while(i < len(A)):
