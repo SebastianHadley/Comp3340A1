@@ -1,0 +1,11 @@
+
+data = read.csv("USPresidency.csv")
+
+
+data$Target = NULL
+print(data)
+print(nrow(data))
+print(data[1,1])
+
+
+
