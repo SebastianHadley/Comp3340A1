@@ -11,9 +11,6 @@ def main():
     hamming_matrix = get_base_matrix(data)
     data = get_attributes(data)
     data = numpy.array(data, float)
-    print(jaccard_matrix)
-    print("hello")
-    print(hamming_matrix)
     i = 1
     a = 1
     while a < len(jaccard_matrix):
@@ -23,7 +20,13 @@ def main():
             i += 1
         a += 1
         i = 1
+    np.set_printoptions(suppress=True)
+    np.set_printoptions(precision=2)
     print(jaccard_matrix)
+    print(hamming_matrix)
+
+
+
 def get_base_matrix(data):
     matrixsize = len(data)+1
     base_matrix = np.zeros((matrixsize, matrixsize))
@@ -35,6 +38,7 @@ def get_base_matrix(data):
         base_matrix[0][i] = int(year)
         i+= 1
     return base_matrix
+
 def get_attributes(data):
     i = 0
     size = len(data[0])-2
@@ -44,6 +48,7 @@ def get_attributes(data):
         data[i].pop()
         i += 1
     return data
+
 def getpresidency():
     import csv
     file = open('uspresidency.csv')
@@ -56,6 +61,7 @@ def getpresidency():
     rows
     file.close
     return rows
+
 def jaccard_binary(x,y):
     # A function for finding the similarity between two binary values
     intersection = np.logical_and(x, y)
