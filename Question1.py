@@ -6,20 +6,21 @@ import numpy as np
 def main():
     data = []
     data = getpresidency()
-    jaccardmatrix = [[]]
-    hammingmatrix = np.matrix
-    i = 0
-    x = 0
-    while i < len(data):
-        while x < len(data):
-            if i & x != 0:
-                print("hello")
-                print(hamming_distance(data[x],data[i]))
-            x += 1
+    matrixsize = int(len(data) + 1)
+    matrixsize = int(matrixsize)
+    print(matrixsize)
+    base_matrix = np.zeros((matrixsize, matrixsize),)
+    print(base_matrix)
+    print(len(data))
+    i = 1
+    while i < matrixsize:
+        year = data[i-1]
+        year = year[0]
+        base_matrix[i][0] = int(year)
+        base_matrix[0][i] = int(year)
         i += 1
-        x = 0
-    i = 0
-    a = 0
+    print(base_matrix)
+
 
     return
 def getpresidency():
