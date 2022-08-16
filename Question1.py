@@ -21,7 +21,7 @@ def main():
         a += 1
         i = 1
     np.set_printoptions(suppress=True)
-    np.set_printoptions(precision=2)
+    np.set_printoptions(precision=3)
     print(jaccard_matrix)
     print(hamming_matrix)
 
