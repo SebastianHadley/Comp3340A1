@@ -30,7 +30,7 @@ while(x < nrow(base_matrix)+1){
 }
   
  print(jaccard_matrix)
-
+ print(hamming_matrix)
 
 }
 
