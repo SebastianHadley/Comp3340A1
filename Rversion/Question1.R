@@ -1,11 +1,27 @@
+# install.packages('rgexf')
+# install.packages('BNSL')
+# install.packages('igraph')
+# install.packages('XGR')
 main <- function(){
-
-   question_1a()
-  
-  
+   #Dont know if we need these or nah
+   # library('rgexf')
+   # library('BNSL')
+   # library('igraph')
+   ham_row = question_1a()
+   ham_column = question_1b()
+   row_edges <- kruskal(ham_row)
+   column_edges <- kruskal(ham_column) 
+   ##Can change like line weightings and stuff and probably label the numbers as the years? 
+   g <- graph_from_edgelist(row_edges,directed = FALSE)
+   x <- graph_from_edgelist(column_edges,directed = FALSE)
+   plot(g)
+   plot(x)
   }
 
-
+# # g <- as.undirected(graph.adjacency(ham_matrix))
+# plot(g)
+# x <- dist(ham_matrix)
+# plot(mst(g))
 
 
 # Creates the matrices for question 1a
@@ -44,8 +60,7 @@ question_1a <- function(){
     y = 1
   }
   #Just for Debugging
-  print(jaccard_matrix)
-  print(hamming_matrix)
+  hamming_matrix  
   
 }
 
@@ -75,8 +90,7 @@ question_1b <- function()
     x = x + 1
     y = 1
   }
-  print(hamming_columns)
-  print(jaccard_columns)  
+  hamming_columns
   
 }
 
