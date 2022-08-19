@@ -22,18 +22,18 @@ question_1c <- function ()
   
   ham_rows = qa[[1]]
   ham_columns =qb[[1]]
-  print(ham_columns)
-  print(ham_rows)
-  
   graph_questiona <- graph_from_adjacency_matrix(ham_rows,mode = 'undirected', weighted = TRUE)
   graph_questionb <- graph_from_adjacency_matrix(ham_columns,mode = 'undirected', weighted = TRUE)
   
   #sets the names for the vertices
   V(graph_questiona)$name <- colnames(ham_rows)
   V(graph_questionb)$name <- colnames(ham_columns)
+  #Sets the labels which is what Yed uses
+  V(graph_questiona)$label <- colnames(ham_rows)
+  V(graph_questionb)$label <- colnames(ham_columns)
   
-  plot(mst(graph_questiona))
-  plot(mst(graph_questionb))
+  write_graph((mst(graph_questiona)),'hamming_rows.gml',format = "graphml")
+  write_graph(mst(graph_questionb),'hamming_cols.gml',format = "graphml")
 }
 # # g <- as.undirected(graph.adjacency(ham_matrix))
 # plot(g)
