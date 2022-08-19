@@ -2,8 +2,10 @@
 # install.packages('BNSL')
 # install.packages('igraph')
 # install.packages('XGR')
+  # install.packages('multiplex')
 main <- function(){
    #Dont know if we need these or nah
+  library('multiplex')
    # library('rgexf')
    library('BNSL')
    library('igraph')
@@ -14,23 +16,47 @@ main <- function(){
 
 question_1c <- function ()
 {
-  ham_row = question_1a()
-  ham_column = question_1b()
-  row_edges <- kruskal(ham_row)
-  column_edges <- kruskal(ham_column) 
-  ##Can change like line weightings and stuff and probably label the numbers as the years? 
-  g <- graph_from_edgelist(row_edges,directed = FALSE)
-  x <- graph_from_edgelist(column_edges,directed = FALSE)
-  plot(g)
-  plot(x)
   
+  qa = question_1a()
+  qb = question_1b()
+  
+  ham_rows = qa[[1]]
+  ham_columns =qb[[1]]
+  print(ham_columns)
+  print(ham_rows)
+  
+  graph_questiona <- graph_from_adjacency_matrix(ham_rows,mode = 'undirected', weighted = TRUE)
+  graph_questionb <- graph_from_adjacency_matrix(ham_columns,mode = 'undirected', weighted = TRUE)
+  
+  #sets the names for the vertices
+  V(graph_questiona)$name <- colnames(ham_rows)
+  V(graph_questionb)$name <- colnames(ham_columns)
+  
+  plot(mst(graph_questiona))
+  plot(mst(graph_questionb))
 }
 # # g <- as.undirected(graph.adjacency(ham_matrix))
 # plot(g)
 # x <- dist(ham_matrix)
-# plot(mst(g))
+# plot(mst(g)) write_graph(g,"filetest.graphml","graphml")
 
-
+#used to generate a smaller version of the matrix so you can test it at a more manageable size.
+test_small <- function(matrix){
+  
+  testmatrix = matrix(nrow=8,ncol = 8)
+  i = 1
+  b = 1
+  while(i < 9){
+    while(b < 9)
+    {
+      testmatrix[i,b] <- matrix[i,b]
+      b = b + 1
+    }
+    i = i + 1 
+    b = 1
+    testmatrix
+  }
+}
 # Creates the matrices for question 1a
 question_1a <- function(){
   
@@ -67,7 +93,7 @@ question_1a <- function(){
     y = 1
   }
   #Just for Debugging
-  hamming_matrix  
+  g <- list(hamming_matrix,jaccard_matrix)
   
 }
 
@@ -97,7 +123,7 @@ question_1b <- function()
     x = x + 1
     y = 1
   }
-  hamming_columns
+  g <- list(hamming_columns,jaccard_columns)
   
 }
 
