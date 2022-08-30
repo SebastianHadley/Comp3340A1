@@ -1,4 +1,4 @@
-Creator "igraph version 1.3.1.9037 Fri Aug 19 20:34:13 2022"
+Creator "igraph version 1.3.1.9037 Tue Aug 30 17:45:46 2022"
 Version 1
 graph
 [
@@ -80,65 +80,76 @@ graph
     source 1
     target 0
     weight 9
+    label 9
   ]
   edge
   [
     source 4
     target 1
     weight 13
+    label 13
   ]
   edge
   [
     source 6
     target 1
     weight 11
+    label 11
   ]
   edge
   [
     source 8
     target 2
     weight 11
+    label 11
   ]
   edge
   [
     source 9
     target 2
     weight 8
+    label 8
   ]
   edge
   [
     source 9
     target 3
     weight 8
+    label 8
   ]
   edge
   [
     source 10
     target 5
     weight 12
+    label 12
   ]
   edge
   [
     source 11
     target 5
     weight 9
+    label 9
   ]
   edge
   [
     source 10
     target 6
     weight 10
+    label 10
   ]
   edge
   [
     source 8
     target 7
     weight 11
+    label 11
   ]
   edge
   [
     source 11
     target 9
     weight 7
+    label 7
   ]
 ]

@@ -3,10 +3,12 @@
 # install.packages('igraph')
 # install.packages('XGR')
   # install.packages('multiplex')
+# install.packages('cccd')
 main <- function(){
    #Dont know if we need these or nah
   library('multiplex')
    # library('rgexf')
+   library('cccd')
    library('BNSL')
    library('igraph')
   question_1c()
@@ -16,29 +18,49 @@ main <- function(){
 
 question_1c <- function ()
 {
+  qa = rowMatrixes()
+  qb = columnMatrixs()
   
-  qa = question_1a()
-  qb = question_1b()
-  
+  #uses the list returned by the functions to get the four matrixes for the jaccard distance and hamming distance.
   ham_rows = qa[[1]]
   ham_columns =qb[[1]]
-  graph_questiona <- graph_from_adjacency_matrix(ham_rows,mode = 'undirected', weighted = TRUE)
-  graph_questionb <- graph_from_adjacency_matrix(ham_columns,mode = 'undirected', weighted = TRUE)
+  jaccard_rows = qa[[2]]
+  jaccard_columns = qb[[2]]
+  #prints the results needed for question 1 and two
+  # write.csv(ham_rows,"hamming_question1a.csv")
+  # write.csv(ham_rows,"jaccard_question1a.csv")
+  # write.csv(ham_rows,"hamming_question1b.csv")
+  # write.csv(ham_rows,"jaccard_question1b.csv")
   
-  #sets the names for the vertices
-  V(graph_questiona)$name <- colnames(ham_rows)
-  V(graph_questionb)$name <- colnames(ham_columns)
+  
+  ham_years <- graph_from_adjacency_matrix(ham_rows,mode = 'undirected', weighted = TRUE)
+  ham_attributes <- graph_from_adjacency_matrix(ham_columns,mode = 'undirected', weighted = TRUE)
+  jaccard_years <- graph_from_adjacency_matrix(jaccard_rows,mode = 'undirected', weighted = TRUE)
+  jaccard_attributes <- graph_from_adjacency_matrix(jaccard_columns,mode = 'undirected', weighted = TRUE)
+  
   #Sets the labels which is what Yed uses
-  V(graph_questiona)$label <- colnames(ham_rows)
-  V(graph_questionb)$label <- colnames(ham_columns)
-  
-  write_graph((mst(graph_questiona)),'hamming_rows.gml',format = "graphml")
-  write_graph(mst(graph_questionb),'hamming_cols.gml',format = "graphml")
+  V(ham_years)$label <- colnames(ham_rows)
+  V(ham_attributes)$label <- colnames(ham_columns)
+  V(jaccard_years)$label <- colnames(jaccard_rows)
+  V(jaccard_attributes)$label <- colnames(jaccard_columns)
+  E(ham_years)$label <- E(ham_years)$weight
+  E(ham_attributes)$label <- E(ham_attributes)$weight
+  E(jaccard_years)$label <- E(jaccard_years)$weight
+  E(jaccard_attributes)$label <- E(jaccard_attributes)$weight
+    #use something about
+  write_graph((mst(ham_years)),'hamming_years.gml',format = "gml")
+  write_graph(mst(ham_attributes),'hamming_attributes.gml',format = "gml")
+  write_graph(mst(jaccard_years),'jaccard_years.gml',format = "gml")
+  write_graph(mst(jaccard_attributes),'jaccard_attributes.gml',format = "gml")
+  plot(mst(ham_years))
+  plot(mst(jaccard_years))
+  plot(mst(ham_attributes))
+  plot(mst(jaccard_attributes))
+  relative_neighbourhood(ham_rows,jaccard_rows)
+  relative_neighbourhood(ham_columns,jaccard_columns)
+  nearest_neighbour(ham_rows, jaccard_rows)
+
 }
-# # g <- as.undirected(graph.adjacency(ham_matrix))
-# plot(g)
-# x <- dist(ham_matrix)
-# plot(mst(g)) write_graph(g,"filetest.graphml","graphml")
 
 #used to generate a smaller version of the matrix so you can test it at a more manageable size.
 test_small <- function(matrix){
@@ -58,7 +80,7 @@ test_small <- function(matrix){
   }
 }
 # Creates the matrices for question 1a
-question_1a <- function(){
+rowMatrixes <- function(){
   
   data = read.csv("USPresidency.csv")
   data$Target <- NULL
@@ -96,8 +118,30 @@ question_1a <- function(){
   g <- list(hamming_matrix,jaccard_matrix)
   
 }
+relative_neighbourhood <- function(ham,jaccard){
+  hamedge <- as.matrix((rng(ham,r = 1, algorithm = 'cover_tree')),matrix.type = 'edgelist')
+  jaccardedge <- as.matrix((rng(jaccard,r = 1, algorithm = 'cover_tree')),matrix.type = 'edgelist')
+  ham_graph <- graph_from_edgelist(hamedge,directed = FALSE)
+  jaccard_graph <- graph_from_edgelist(jaccardedge,directed = FALSE)
+  
+  V(ham_graph)$label <- colnames(ham)
+  V(jaccard_graph)$label <- colnames(jaccard)
+  # E(ham_graph)$label <- E(ham_graph)$weight
+  # E(jaccard_graph)$label <- E(jaccard_graph)$weight
+  plot(ham_graph)
+  plot(jaccard_graph)
+}
 
-question_1b <- function()
+nearest_neighbour <- function(ham,jaccard)
+{
+  
+  graph <- nng(dx = ham, k = 2,algorithm='cover_tree')
+  jac <- nng(dx = jaccard, k = 2,algorithm='cover_tree')
+  plot(graph)
+  plot(jac)
+}
+
+columnMatrixs <- function()
 {
   
   data = read.csv("USPresidency.csv")
@@ -133,7 +177,7 @@ get_jaccard_distance <- function(var1,var2){
   intersection = sum(var1 + var2 == 2)
   #The number of times in which only one of the years value is 1 + the intersection.
   union = sum(var1 + var2 == 1) + intersection
-  (intersection/union)
+  1 - (intersection/union)
 }
 
 # Generates hamming distance between two rows
