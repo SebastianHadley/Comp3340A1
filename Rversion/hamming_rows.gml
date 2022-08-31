@@ -1,372 +1,226 @@
-Creator "igraph version 1.3.1.9037 Fri Aug 19 20:34:13 2022"
-Version 1
-graph
-[
-  directed 0
-  node
-  [
-    id 0
-    name "1864"
-    label "1864"
-  ]
-  node
-  [
-    id 1
-    name "1868"
-    label "1868"
-  ]
-  node
-  [
-    id 2
-    name "1872"
-    label "1872"
-  ]
-  node
-  [
-    id 3
-    name "1880"
-    label "1880"
-  ]
-  node
-  [
-    id 4
-    name "1888"
-    label "1888"
-  ]
-  node
-  [
-    id 5
-    name "1900"
-    label "1900"
-  ]
-  node
-  [
-    id 6
-    name "1904"
-    label "1904"
-  ]
-  node
-  [
-    id 7
-    name "1908"
-    label "1908"
-  ]
-  node
-  [
-    id 8
-    name "1916"
-    label "1916"
-  ]
-  node
-  [
-    id 9
-    name "1924"
-    label "1924"
-  ]
-  node
-  [
-    id 10
-    name "1928"
-    label "1928"
-  ]
-  node
-  [
-    id 11
-    name "1936"
-    label "1936"
-  ]
-  node
-  [
-    id 12
-    name "1940"
-    label "1940"
-  ]
-  node
-  [
-    id 13
-    name "1944"
-    label "1944"
-  ]
-  node
-  [
-    id 14
-    name "1948"
-    label "1948"
-  ]
-  node
-  [
-    id 15
-    name "1956"
-    label "1956"
-  ]
-  node
-  [
-    id 16
-    name "1964"
-    label "1964"
-  ]
-  node
-  [
-    id 17
-    name "1972"
-    label "1972"
-  ]
-  node
-  [
-    id 18
-    name "1860"
-    label "1860"
-  ]
-  node
-  [
-    id 19
-    name "1876"
-    label "1876"
-  ]
-  node
-  [
-    id 20
-    name "1884"
-    label "1884"
-  ]
-  node
-  [
-    id 21
-    name "1892"
-    label "1892"
-  ]
-  node
-  [
-    id 22
-    name "1896"
-    label "1896"
-  ]
-  node
-  [
-    id 23
-    name "1912"
-    label "1912"
-  ]
-  node
-  [
-    id 24
-    name "1920"
-    label "1920"
-  ]
-  node
-  [
-    id 25
-    name "1932"
-    label "1932"
-  ]
-  node
-  [
-    id 26
-    name "1952"
-    label "1952"
-  ]
-  node
-  [
-    id 27
-    name "1960"
-    label "1960"
-  ]
-  node
-  [
-    id 28
-    name "1968"
-    label "1968"
-  ]
-  node
-  [
-    id 29
-    name "1976"
-    label "1976"
-  ]
-  node
-  [
-    id 30
-    name "1980"
-    label "1980"
-  ]
-  edge
-  [
-    source 8
-    target 0
-    weight 1
-  ]
-  edge
-  [
-    source 21
-    target 0
-    weight 2
-  ]
-  edge
-  [
-    source 13
-    target 1
-    weight 2
-  ]
-  edge
-  [
-    source 28
-    target 1
-    weight 3
-  ]
-  edge
-  [
-    source 15
-    target 2
-    weight 1
-  ]
-  edge
-  [
-    source 20
-    target 3
-    weight 3
-  ]
-  edge
-  [
-    source 24
-    target 3
-    weight 3
-  ]
-  edge
-  [
-    source 8
-    target 4
-    weight 1
-  ]
-  edge
-  [
-    source 16
-    target 4
-    weight 1
-  ]
-  edge
-  [
-    source 15
-    target 5
-    weight 2
-  ]
-  edge
-  [
-    source 10
-    target 6
-    weight 2
-  ]
-  edge
-  [
-    source 13
-    target 6
-    weight 1
-  ]
-  edge
-  [
-    source 15
-    target 6
-    weight 1
-  ]
-  edge
-  [
-    source 24
-    target 7
-    weight 3
-  ]
-  edge
-  [
-    source 27
-    target 7
-    weight 2
-  ]
-  edge
-  [
-    source 17
-    target 8
-    weight 1
-  ]
-  edge
-  [
-    source 14
-    target 9
-    weight 3
-  ]
-  edge
-  [
-    source 12
-    target 11
-    weight 1
-  ]
-  edge
-  [
-    source 13
-    target 12
-    weight 1
-  ]
-  edge
-  [
-    source 14
-    target 13
-    weight 3
-  ]
-  edge
-  [
-    source 16
-    target 15
-    weight 2
-  ]
-  edge
-  [
-    source 30
-    target 16
-    weight 5
-  ]
-  edge
-  [
-    source 20
-    target 18
-    weight 2
-  ]
-  edge
-  [
-    source 23
-    target 18
-    weight 3
-  ]
-  edge
-  [
-    source 28
-    target 18
-    weight 2
-  ]
-  edge
-  [
-    source 26
-    target 19
-    weight 3
-  ]
-  edge
-  [
-    source 29
-    target 19
-    weight 2
-  ]
-  edge
-  [
-    source 24
-    target 22
-    weight 2
-  ]
-  edge
-  [
-    source 29
-    target 23
-    weight 3
-  ]
-  edge
-  [
-    source 27
-    target 25
-    weight 2
-  ]
-]
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_name" for="node" attr.name="name" attr.type="string"/>
+  <key id="v_label" for="node" attr.name="label" attr.type="string"/>
+  <key id="e_weight" for="edge" attr.name="weight" attr.type="double"/>
+  <graph id="G" edgedefault="undirected">
+    <node id="n0">
+      <data key="v_name">1864</data>
+      <data key="v_label">1864</data>
+    </node>
+    <node id="n1">
+      <data key="v_name">1868</data>
+      <data key="v_label">1868</data>
+    </node>
+    <node id="n2">
+      <data key="v_name">1872</data>
+      <data key="v_label">1872</data>
+    </node>
+    <node id="n3">
+      <data key="v_name">1880</data>
+      <data key="v_label">1880</data>
+    </node>
+    <node id="n4">
+      <data key="v_name">1888</data>
+      <data key="v_label">1888</data>
+    </node>
+    <node id="n5">
+      <data key="v_name">1900</data>
+      <data key="v_label">1900</data>
+    </node>
+    <node id="n6">
+      <data key="v_name">1904</data>
+      <data key="v_label">1904</data>
+    </node>
+    <node id="n7">
+      <data key="v_name">1908</data>
+      <data key="v_label">1908</data>
+    </node>
+    <node id="n8">
+      <data key="v_name">1916</data>
+      <data key="v_label">1916</data>
+    </node>
+    <node id="n9">
+      <data key="v_name">1924</data>
+      <data key="v_label">1924</data>
+    </node>
+    <node id="n10">
+      <data key="v_name">1928</data>
+      <data key="v_label">1928</data>
+    </node>
+    <node id="n11">
+      <data key="v_name">1936</data>
+      <data key="v_label">1936</data>
+    </node>
+    <node id="n12">
+      <data key="v_name">1940</data>
+      <data key="v_label">1940</data>
+    </node>
+    <node id="n13">
+      <data key="v_name">1944</data>
+      <data key="v_label">1944</data>
+    </node>
+    <node id="n14">
+      <data key="v_name">1948</data>
+      <data key="v_label">1948</data>
+    </node>
+    <node id="n15">
+      <data key="v_name">1956</data>
+      <data key="v_label">1956</data>
+    </node>
+    <node id="n16">
+      <data key="v_name">1964</data>
+      <data key="v_label">1964</data>
+    </node>
+    <node id="n17">
+      <data key="v_name">1972</data>
+      <data key="v_label">1972</data>
+    </node>
+    <node id="n18">
+      <data key="v_name">1860</data>
+      <data key="v_label">1860</data>
+    </node>
+    <node id="n19">
+      <data key="v_name">1876</data>
+      <data key="v_label">1876</data>
+    </node>
+    <node id="n20">
+      <data key="v_name">1884</data>
+      <data key="v_label">1884</data>
+    </node>
+    <node id="n21">
+      <data key="v_name">1892</data>
+      <data key="v_label">1892</data>
+    </node>
+    <node id="n22">
+      <data key="v_name">1896</data>
+      <data key="v_label">1896</data>
+    </node>
+    <node id="n23">
+      <data key="v_name">1912</data>
+      <data key="v_label">1912</data>
+    </node>
+    <node id="n24">
+      <data key="v_name">1920</data>
+      <data key="v_label">1920</data>
+    </node>
+    <node id="n25">
+      <data key="v_name">1932</data>
+      <data key="v_label">1932</data>
+    </node>
+    <node id="n26">
+      <data key="v_name">1952</data>
+      <data key="v_label">1952</data>
+    </node>
+    <node id="n27">
+      <data key="v_name">1960</data>
+      <data key="v_label">1960</data>
+    </node>
+    <node id="n28">
+      <data key="v_name">1968</data>
+      <data key="v_label">1968</data>
+    </node>
+    <node id="n29">
+      <data key="v_name">1976</data>
+      <data key="v_label">1976</data>
+    </node>
+    <node id="n30">
+      <data key="v_name">1980</data>
+      <data key="v_label">1980</data>
+    </node>
+    <edge source="n0" target="n8">
+      <data key="e_weight">1</data>
+    </edge>
+    <edge source="n0" target="n21">
+      <data key="e_weight">2</data>
+    </edge>
+    <edge source="n1" target="n13">
+      <data key="e_weight">2</data>
+    </edge>
+    <edge source="n1" target="n28">
+      <data key="e_weight">3</data>
+    </edge>
+    <edge source="n2" target="n15">
+      <data key="e_weight">1</data>
+    </edge>
+    <edge source="n3" target="n20">
+      <data key="e_weight">3</data>
+    </edge>
+    <edge source="n3" target="n24">
+      <data key="e_weight">3</data>
+    </edge>
+    <edge source="n4" target="n8">
+      <data key="e_weight">1</data>
+    </edge>
+    <edge source="n4" target="n16">
+      <data key="e_weight">1</data>
+    </edge>
+    <edge source="n5" target="n15">
+      <data key="e_weight">2</data>
+    </edge>
+    <edge source="n6" target="n10">
+      <data key="e_weight">2</data>
+    </edge>
+    <edge source="n6" target="n13">
+      <data key="e_weight">1</data>
+    </edge>
+    <edge source="n6" target="n15">
+      <data key="e_weight">1</data>
+    </edge>
+    <edge source="n7" target="n24">
+      <data key="e_weight">3</data>
+    </edge>
+    <edge source="n7" target="n27">
+      <data key="e_weight">2</data>
+    </edge>
+    <edge source="n8" target="n17">
+      <data key="e_weight">1</data>
+    </edge>
+    <edge source="n9" target="n14">
+      <data key="e_weight">3</data>
+    </edge>
+    <edge source="n11" target="n12">
+      <data key="e_weight">1</data>
+    </edge>
+    <edge source="n12" target="n13">
+      <data key="e_weight">1</data>
+    </edge>
+    <edge source="n13" target="n14">
+      <data key="e_weight">3</data>
+    </edge>
+    <edge source="n15" target="n16">
+      <data key="e_weight">2</data>
+    </edge>
+    <edge source="n16" target="n30">
+      <data key="e_weight">5</data>
+    </edge>
+    <edge source="n18" target="n20">
+      <data key="e_weight">2</data>
+    </edge>
+    <edge source="n18" target="n23">
+      <data key="e_weight">3</data>
+    </edge>
+    <edge source="n18" target="n28">
+      <data key="e_weight">2</data>
+    </edge>
+    <edge source="n19" target="n26">
+      <data key="e_weight">3</data>
+    </edge>
+    <edge source="n19" target="n29">
+      <data key="e_weight">2</data>
+    </edge>
+    <edge source="n22" target="n24">
+      <data key="e_weight">2</data>
+    </edge>
+    <edge source="n23" target="n29">
+      <data key="e_weight">3</data>
+    </edge>
+    <edge source="n25" target="n27">
+      <data key="e_weight">2</data>
+    </edge>
+  </graph>
+</graphml>

@@ -41,12 +41,16 @@ question_1c <- function ()
   #Sets the labels which is what Yed uses
   V(ham_years)$label <- colnames(ham_rows)
   V(ham_attributes)$label <- colnames(ham_columns)
+  print(ham_columns)
   V(jaccard_years)$label <- colnames(jaccard_rows)
   V(jaccard_attributes)$label <- colnames(jaccard_columns)
   E(ham_years)$label <- E(ham_years)$weight
   E(ham_attributes)$label <- E(ham_attributes)$weight
   E(jaccard_years)$label <- E(jaccard_years)$weight
   E(jaccard_attributes)$label <- E(jaccard_attributes)$weight
+  print(ham_columns)
+  plot(ham_attributes)
+
     #use something about
   write_graph((mst(ham_years)),'hamming_years.gml',format = "gml")
   write_graph(mst(ham_attributes),'hamming_attributes.gml',format = "gml")
@@ -119,8 +123,8 @@ rowMatrixes <- function(){
   
 }
 relative_neighbourhood <- function(ham,jaccard){
-  hamedge <- as.matrix((rng(ham,r = 1, algorithm = 'cover_tree')),matrix.type = 'edgelist')
-  jaccardedge <- as.matrix((rng(jaccard,r = 1, algorithm = 'cover_tree')),matrix.type = 'edgelist')
+  hamedge <- as.matrix((rng(x = ham, algorithm = 'kd_tree',open = FALSE)),matrix.type = 'edgelist')
+  jaccardedge <- as.matrix((rng(x = jaccard, algorithm = 'kd_tree',open = FALSE)),matrix.type = 'edgelist')
   ham_graph <- graph_from_edgelist(hamedge,directed = FALSE)
   jaccard_graph <- graph_from_edgelist(jaccardedge,directed = FALSE)
   
@@ -135,8 +139,8 @@ relative_neighbourhood <- function(ham,jaccard){
 nearest_neighbour <- function(ham,jaccard)
 {
   
-  graph <- nng(dx = ham, k = 2,algorithm='cover_tree')
-  jac <- nng(dx = jaccard, k = 2,algorithm='cover_tree')
+  graph <- nng(x = ham, k = 2,algorithm='cover_tree')
+  jac <- nng(x = jaccard, k = 2,algorithm='cover_tree')
   plot(graph)
   plot(jac)
 }
